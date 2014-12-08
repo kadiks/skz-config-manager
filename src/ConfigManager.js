@@ -20,10 +20,17 @@
   function ConfigManager(params) {
     var
       o = params || {},
-      autoLoad = typeof(o.autoLoad) === 'boolean' ? o.autoLoad : true;
+      autoLoad = typeof(o.autoLoad) === 'boolean' ? o.autoLoad : true,
+      callback = typeof(o.callback) === 'function' ? o.callback : null;
+
+    if (callback === null) {
+      return;
+    }
 
     if (autoLoad) {
-      this.initialize();
+      this.initialize({
+        callback: callback
+      });
     }
   };
 
@@ -99,15 +106,18 @@
    */
   ConfigManager.prototype.initialize = function(params) {
     var
+      o = params || {},
+      callback = typeof(o.callback) === 'function' ? o.callback : null,
       self = this;
     this._loadFile({
       callback: function(err, data) {
         if (err) {
-          return;
+          callback(err);
         }
         self._loadArgs({
           args: process.argv
         });
+        callback(null);
       }
     });
   };
