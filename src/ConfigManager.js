@@ -78,18 +78,17 @@
 
     valArg = this._getDeepValue({
       key: key,
-      configObject: this._cfgFile
+      configObject: this._cfgArg
     });
     valFile = this._getDeepValue({
       key: key,
-      configObject: this._cfgArg
+      configObject: this._cfgFile
     });
-
-    if (valArg === null) {
+    if (typeof(valArg) === 'undefined') {
       return valFile;
     }
-    return valArg;
 
+    return valArg;
   };
 
   /**
