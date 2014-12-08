@@ -1,0 +1,23 @@
+{
+  "name": "skz-config-manager",
+  "version": "0.1.0",
+  "description": "Configuration manager shared across the app and that is overwritten via command line",
+  "main": "src/ConfigManager.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kadiks/skz-config-manager"
+  },
+  "author": "Jénaïc Cambré a.k.a kadiks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kadiks/skz-config-manager/issues"
+  },
+  "homepage": "https://github.com/kadiks/skz-config-manager",
+  "dependencies": {
+    "should": "^4.2.1",
+    "skz-grunt-dev": "git://github.com/kadiks/skz-grunt-dev.git"
+  }
+}

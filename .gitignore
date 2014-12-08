@@ -1,0 +1,19 @@
+## How to write gitignore file: http://www.sujee.net/tech/articles/gitignore/
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+
+## skz files to ignore
+#dump/*
+#config/profile/*
+node_modules/*
+npm-debug.log
+#.grunt/*
+
+## jscoverage
+test-cov/*
+covreporter.html
+test/unit-cov/*
