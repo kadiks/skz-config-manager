@@ -14,6 +14,7 @@
    * @class SKZ.ConfigManager
    *
    * @param {Object} params
+   * @param {Function} params.callback
    * @param {Boolean} [params.autoLoad=true] Load the file and the arguments at instatiation
    */
 
