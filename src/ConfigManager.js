@@ -123,6 +123,29 @@
   };
 
   /**
+   * Set a new value for the key
+   *
+   * @param {Object} params
+   */
+  ConfigManager.prototype.set = function(params) {
+    var o = params || {},
+      key = o.key || null,
+      value = o.value || null,
+      obj = this._cfgFile,
+      path = key.split('.');
+
+    if (key === null) {
+      return;
+    }
+
+    for (i = 0; i < path.length - 1; i++) {
+      obj = obj[path[i]];
+    }
+
+    obj[path[i]] = value;
+  };
+
+  /**
    * Set the configuration location file
    *
    * @param {Object} params

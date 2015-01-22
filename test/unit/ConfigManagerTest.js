@@ -166,4 +166,31 @@ describe('ConfigManager', function() {
       }).should.eql(1);
     });
   });
+  describe('#set', function() {
+    it('should change the value', function(done) {
+      var
+        ConfigManager = require('../../src/ConfigManager'),
+        cfgMgr = new ConfigManager({
+          autoLoad: false
+        });
+      cfgMgr.setConfigLocation({
+        location: '../../test/fixtures/cfg1.json'
+      });
+      cfgMgr._loadFile({
+        callback: function(err, data) {
+          if (err) {
+            done();
+          }
+          cfgMgr.set({
+            key: 'app.host',
+            value: 'kadiks.com'
+          });
+          cfgMgr.get({
+            key: 'app.host'
+          }).should.eql('kadiks.com');
+          done();
+        }
+      });
+    });
+  });
 });
