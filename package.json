@@ -16,7 +16,7 @@
     "url": "https://github.com/kadiks/skz-config-manager/issues"
   },
   "homepage": "https://github.com/kadiks/skz-config-manager",
-  "dependencies": {
+  "devDependencies": {
     "should": "^4.2.1",
     "skz-grunt-dev": "git://github.com/kadiks/skz-grunt-dev.git"
   }
